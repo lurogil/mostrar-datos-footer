@@ -110,32 +110,22 @@ class Mostrar_Datos_Multisite_Footer_Admin {
     );
   }
 
-  public function mostrar_datos_footer_index() {
-
-	$espacio="<br>";
+  function cargar_datos(){
 	$carga_datos=array();
-	$url_sitio=site_url();
-	$nombre_del_site=get_bloginfo();
-	$direcion_correo_admin_site=get_bloginfo('admin_email');
-	$id_sitio=get_the_id();
-	$titulo_pagina=single_post_title();
-	echo("<h1>Titulo</h1>");
-	echo ($espacio);
-	echo("Url del sitio: ".$url_sitio );
-	echo($espacio);
-	echo("Titulo del sitio: ".$nombre_del_site);
-	echo($espacio);
-	echo("Correo del administrador: ".$direcion_correo_admin_site);
-	echo($espacio);
-	echo($id_sitio);
-	echo($espacio);
-	echo($titulo_pagina);
-	
-	//$nombre_del_site=$nombre_del_site -> {"site_name"};
-	//echo("Nombre del sitio: ".$nombre_del_site);
-	$mail_admin_site="";
-	$id_post="";
-	$titulo_paginas="";
-	
+	$carga_datos["Url del sitio"]=site_url();
+	$carga_datos["Nombre del sitio"]=get_bloginfo();
+	$carga_datos["Direcion de correo del admin"]=get_bloginfo('admin_email');
+	$carga_datos["Id sitio"]=get_the_id();
+	$carga_datos["Titulo pagina"]=single_post_title();
+	return $carga_datos;
+  }
+
+  public function mostrar_datos_footer_index() {
+	echo("<h1>".$this->plugin_name."</h1>");
+	$carga_datos= $this->cargar_datos();
+	foreach($carga_datos as $titulo_dato => $dato){
+		echo $titulo_dato. " ".$dato;
+		echo "<br>";
+	}
   }
 }
