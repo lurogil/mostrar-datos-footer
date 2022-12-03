@@ -110,7 +110,7 @@ class Mostrar_Datos_Multisite_Footer_Admin {
     );
   }
 
-  function cargar_datos(){
+  public function cargar_datos(){
 	$carga_datos=array();
 	$carga_datos["Url del sitio"]=site_url();
 	$carga_datos["Nombre del sitio"]=get_bloginfo();
@@ -121,6 +121,7 @@ class Mostrar_Datos_Multisite_Footer_Admin {
   }
 
   public function mostrar_datos_footer_index() {
+	
 	echo("<h1>".$this->plugin_name."</h1>");
 	$carga_datos= $this->cargar_datos();
 	foreach($carga_datos as $titulo_dato => $dato){

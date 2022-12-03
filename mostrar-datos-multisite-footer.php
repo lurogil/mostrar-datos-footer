@@ -1,5 +1,5 @@
 <?php
-
+require('admin/class-mostrar-datos-multisite-footer-admin.php');
 /**
  * The plugin bootstrap file
  *
@@ -83,8 +83,15 @@ function run_mostrar_datos_multisite_footer() {
 add_action('wp_footer', 'cargar_datos_footer');
 function cargar_datos_footer()
 {
+	$objeto_datos= new Mostrar_Datos_Multisite_Footer_Admin(null, array());
+	$objeto_datos=$objeto_datos->cargar_datos();
 	echo "<div class='footer-datos'>";
 	echo "<p>Mostrar datos en el footer</p>";
+	echo"<ul>";
+	foreach($objeto_datos as $titulo_dato => $dato){
+		echo "<li>".$titulo_dato. " ".$dato."</li>";
+	}
+	echo"</ul>";
 	echo "</div>";
 }
 
