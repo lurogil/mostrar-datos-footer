@@ -79,4 +79,13 @@ function run_mostrar_datos_multisite_footer() {
 	$plugin->run();
 
 }
+
+add_action('wp_footer', 'cargar_datos_footer');
+function cargar_datos_footer()
+{
+	echo "<div class='footer-datos'>";
+	echo "<p>Mostrar datos en el footer</p>";
+	echo "</div>";
+}
+
 run_mostrar_datos_multisite_footer();

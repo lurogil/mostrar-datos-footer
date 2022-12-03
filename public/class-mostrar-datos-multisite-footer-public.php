@@ -99,5 +99,4 @@ class Mostrar_Datos_Multisite_Footer_Public {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/mostrar-datos-multisite-footer-public.js', array( 'jquery' ), $this->version, false );
 
 	}
-
 }
