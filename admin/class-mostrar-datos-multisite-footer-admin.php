@@ -112,11 +112,11 @@ class Mostrar_Datos_Multisite_Footer_Admin {
 
   public function cargar_datos(){
 	$carga_datos=array();
-	$carga_datos["Url del sitio"]=site_url();
-	$carga_datos["Nombre del sitio"]=get_bloginfo();
-	$carga_datos["Direcion de correo del admin"]=get_bloginfo('admin_email');
-	$carga_datos["Id sitio"]=get_the_id();
-	$carga_datos["Titulo de la pagina"]=single_post_title( "",false);//le paso el false para evitar el display
+	$carga_datos["Url del sitio: "]=site_url();
+	$carga_datos["Nombre del sitio: "]=get_bloginfo();
+	$carga_datos["Direcion de correo del admin: "]=get_bloginfo('admin_email');
+	$carga_datos["Id del post: "]=get_the_id();
+	$carga_datos["Titulo de la pagina: "]=single_post_title('',false);//le paso el false para evitar el display
 	return $carga_datos;
   }
 
