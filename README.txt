@@ -10,7 +10,40 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
 
+Prueba tecnica de Luciano Rodriguez Gil
+Para dicha prueba he analizado que el plugin a desarrollar era interesante realizarlo con un boiler plate aunque dicho plugin es sencillo pienso que podrian
+apliarse las funcionalidades del mismo. 
+
+El plugin genera una pagina de administracion en la que muestra los datos solicitados
+El plugin carga en el footer de los sitio los datos solicitados. 
+
+Si se desea cargar de otra manera los datos del en el tema elegido se puede usar este trozo de codigo en el fichero footer.php
+
+	if (class_exists( 'Mostrar_Datos_Multisite_Footer_Admin')){
+		$objeto_datos= new Mostrar_Datos_Multisite_Footer_Admin(null, array());
+	}
+	if(isset($objeto_datos))
+	{
+		$objeto_datos=$objeto_datos->cargar_datos();
+		echo "<div class='footer-datos'>";
+		echo "<p>Mostrar datos en el footer</p>";
+		echo"<ul>";
+		foreach($objeto_datos as $titulo_dato => $dato)
+		{
+			echo "<li>".$titulo_dato. " ".$dato."</li>";
+		}
+		echo"</ul>";
+		echo "</div>";
+	}
+    
+Ademas usamos un fichero css para dar estilo a dicho añadido. 
+
+
+
+
+
 == Description ==
+
 
 This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
 
