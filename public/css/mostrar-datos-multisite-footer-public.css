@@ -2,3 +2,8 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
+ div.footer-datos{
+    background: grey;
+    margin: 0 auto;
+    color:white;
+ }
