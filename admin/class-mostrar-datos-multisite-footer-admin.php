@@ -116,7 +116,7 @@ class Mostrar_Datos_Multisite_Footer_Admin {
 	$carga_datos["Nombre del sitio"]=get_bloginfo();
 	$carga_datos["Direcion de correo del admin"]=get_bloginfo('admin_email');
 	$carga_datos["Id sitio"]=get_the_id();
-	$carga_datos["Titulo pagina"]=single_post_title();
+	$carga_datos["Titulo de la pagina"]=single_post_title( "",false);//le paso el false para evitar el display
 	return $carga_datos;
   }
 
